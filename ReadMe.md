@@ -16,7 +16,7 @@ A modern, feature-rich Roblox UI library with acrylic blur effects, smooth anima
 
 ```lua
 -- Load the library
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/noowtf31-ui/Arcylic/refs/heads/main/src.lua.txt"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/NexoModsZ/LibraryHandler/refs/heads/main/main.lua"))()
 
 -- Create the main window
 local window = Library.new("My Hub", "MyHubConfigs")
