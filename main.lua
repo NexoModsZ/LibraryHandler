@@ -535,7 +535,7 @@ end
 function Library:_SetupMobileSupport()
     local mobileButton = CreateInstance("ImageButton", {
         Name = "MobileToggle",
-        Image = "rbxassetid://112235310154264",
+        Image = "rbxassetid://7733749837",
         ImageColor3 = c.Text,
         BackgroundColor3 = c.Background,
         BackgroundTransparency = 0.1,
@@ -546,22 +546,25 @@ function Library:_SetupMobileSupport()
         ZIndex = 999,
         Parent = self.screenGui
     })
-    CreateCorner(mobileButton, 8)
+
+    CreateCorner(mobileButton, 10)
     CreateStroke(mobileButton)
-    
+
     local dragging = false
     local dragStart, startPos
-    
+
     mobileButton.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then
+        if input.UserInputType == Enum.UserInputType.Touch
+        or input.UserInputType == Enum.UserInputType.MouseButton1 then
             dragging = true
             dragStart = input.Position
             startPos = mobileButton.Position
         end
     end)
-    
+
     mobileButton.InputEnded:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then
+        if input.UserInputType == Enum.UserInputType.Touch
+        or input.UserInputType == Enum.UserInputType.MouseButton1 then
             if dragging then
                 local delta = input.Position - dragStart
                 if delta.Magnitude < 10 then
@@ -571,9 +574,12 @@ function Library:_SetupMobileSupport()
             dragging = false
         end
     end)
-    
+
     ui.InputChanged:Connect(function(input)
-        if dragging and (input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseMovement) then
+        if dragging and (
+            input.UserInputType == Enum.UserInputType.Touch
+            or input.UserInputType == Enum.UserInputType.MouseMovement
+        ) then
             local delta = input.Position - dragStart
             mobileButton.Position = UDim2.new(
                 startPos.X.Scale,
@@ -583,9 +589,9 @@ function Library:_SetupMobileSupport()
             )
         end
     end)
-    
+
     self._mobileToggle = mobileButton
-    
+
     if IsMobileDevice() then
         mobileButton.Visible = not self._visible
     end
