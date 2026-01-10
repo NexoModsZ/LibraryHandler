@@ -837,7 +837,7 @@ function Library:_ToggleMinimize()
             CreateTween(self.mainContent, {Size = UDim2.new(1, 0, 1, -46)}, animationspeed.Normal)
         end)
         if self.resizeBtn then
-            self.resizeBtn.Visible = true
+            self.resizeBtn.Visible = false
         end
     end
 end
