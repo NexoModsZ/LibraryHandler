@@ -546,7 +546,7 @@ function Library:_SetupMobileSupport()
         ZIndex = 999,
         Parent = self.screenGui
     })
-    CreateCorner(mobileButton, 25)
+    CreateCorner(mobileButton, 8)
     CreateStroke(mobileButton)
     
     local dragging = false
