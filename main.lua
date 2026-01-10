@@ -1120,20 +1120,20 @@ function Library._CreateTab(section, name, icon)
         Size = UDim2.new(0, s.Tab.Width, 0, s.Tab.Height),
         Parent = section.tabsContainer
     })
-    CreateCorner(tabBtn, 5)
+    CreateCorner(tabBtn, 10)
 
     local tabStroke = CreateStroke(tabBtn, c.Border, 1)
 
     local iconLabel = CreateInstance("ImageLabel", {
         Name = "Icon",
         BackgroundTransparency = 1,
-        Image = icon or "rbxassetid://112235310154264",
+        Image = icon or "rbxassetid://7733749837",
         ImageColor3 = c.TextDark,
         AnchorPoint = Vector2.new(0, 0.5),
         Position = UDim2.new(0, 11, 0.5, 0),
         Size = UDim2.new(0, 15, 0, 15),
+        Parent = tabBtn
     })
-    CreateCorner(iconLabel, 10)
 
     local tabText = CreateInstance("TextLabel", {
         Name = "TabText",
