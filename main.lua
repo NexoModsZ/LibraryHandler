@@ -1132,8 +1132,8 @@ function Library._CreateTab(section, name, icon)
         AnchorPoint = Vector2.new(0, 0.5),
         Position = UDim2.new(0, 11, 0.5, 0),
         Size = UDim2.new(0, 15, 0, 15),
-        Parent = tabBtn
     })
+    CreateCorner(iconLabel, 10)
 
     local tabText = CreateInstance("TextLabel", {
         Name = "TabText",
