@@ -304,7 +304,7 @@ function Env:Window(meta)
 	lak(CloseUI)
 
 	UICorner_1z.Parent = CloseUI
-	UICorner_1z.CornerRadius = UDim.new(0,5)
+	UICorner_1z.CornerRadius = UDim.new(1,0)
 
 	Icon_1.Name = "Icon"
 	Icon_1.Parent = CloseUI
