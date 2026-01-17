@@ -168,7 +168,7 @@ NexoMods.ZIndexBehavior = Enum.ZIndexBehavior.Global
 function Env:Window(meta)
 	local Title = meta.Title or "Title"
 	local Desc = meta.Desc or "Desc"
-	local Logo = (meta and meta.Logo) or "rbxassetid://75025435967317"
+	local Logo = meta.Logo or "rbxassetid://138166244897009"
 
 	local Background_1 = Instance.new("Frame")
 	local DropShadow_1 = Instance.new("ImageLabel")
