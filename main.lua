@@ -160,15 +160,15 @@ EffectClick2 = function(c, p)
 	expandTween:Play()
 end
 
-local Khaw = Instance.new("ScreenGui")
-Khaw.Name = "Khaw"
-Khaw.Parent = not game:GetService("RunService"):IsStudio() and game:GetService("CoreGui") or game:GetService("Players").LocalPlayer.PlayerGui
-Khaw.ZIndexBehavior = Enum.ZIndexBehavior.Global
+local NexoMods = Instance.new("ScreenGui")
+NexoMods.Name = "NexoMods"
+NexoMods.Parent = not game:GetService("RunService"):IsStudio() and game:GetService("CoreGui") or game:GetService("Players").LocalPlayer.PlayerGui
+NexoMods.ZIndexBehavior = Enum.ZIndexBehavior.Global
 
 function Env:Window(meta)
 	local Title = meta.Title or "Title"
 	local Desc = meta.Desc or "Desc"
-	local Logo = meta.Logo or 75025435967317
+	local Logo = (meta and meta.Logo) or "rbxassetid://75025435967317"
 
 	local Background_1 = Instance.new("Frame")
 	local DropShadow_1 = Instance.new("ImageLabel")
@@ -183,7 +183,7 @@ function Env:Window(meta)
 	local Effect_1 = Instance.new("ImageLabel")
 
 	Background_1.Name = "Background"
-	Background_1.Parent = Khaw
+	Background_1.Parent = NexoMods
 	Background_1.AnchorPoint = Vector2.new(0.5, 0.5)
 	Background_1.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	Background_1.BackgroundTransparency = 0.5
@@ -291,7 +291,7 @@ function Env:Window(meta)
 
 
 	CloseUI.Name = "CloseUI"
-	CloseUI.Parent = Khaw
+	CloseUI.Parent = NexoMods
 	CloseUI.AnchorPoint = Vector2.new(0, 1)
 	CloseUI.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	CloseUI.BorderColor3 = Color3.fromRGB(0,0,0)
